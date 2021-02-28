@@ -1,0 +1,12 @@
+section .text
+global main
+main:
+mov eax,4 ;　　   4号调用
+mov ebx,1 ;　　   表示输出
+mov ecx,msg;　    字符串的首地址送入ecx寄存器
+mov edx,14 ;　　  字符串的长度送入edx寄存器
+int 80h ;　　　   输出字符串
+mov eax,1 ;　　 
+int 80h ;　　　   结束　
+msg:
+db "hello world!",0ah,0dh
