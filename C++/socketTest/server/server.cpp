@@ -18,7 +18,7 @@ void * send_client(void * m) {
 
 	while(1) {
 		if(!tcp.is_online() && tcp.get_last_closed_sockets() == desc->id) {
-			cerr << "Connessione chiusa: stop send_clients( id:" << desc->id << " ip:" << desc->ip << " )"<< endl;
+			cerr << "Connessione chiusa: stop send_clients( id:" << desc->id << " ip:" << desc->ip << " )"<< endl; // corresponds to the C stream stderr.
 			break;
 		}
 		std::time_t t = std::time(0);
@@ -35,7 +35,7 @@ void * send_client(void * m) {
 			    to_string(min)                 + ":" +
 			    to_string(sec)                 + "\r\n";
 		cerr << date << endl;
-		tcp.Send(date, desc->id);
+		tcp.Send(date, desc->id);		//传给client
 		sleep(time_send);
 	}
 	pthread_exit(NULL);
@@ -44,7 +44,8 @@ void * send_client(void * m) {
 
 void * received(void * m)
 {
-        pthread_detach(pthread_self());
+	// 接受并建立连接
+    pthread_detach(pthread_self());		// 创建分离的线程
 	vector<descript_socket*> desc;
 	while(1)
 	{
@@ -55,7 +56,7 @@ void * received(void * m)
 				if(!desc[i]->enable_message_runtime) 
 				{
 					desc[i]->enable_message_runtime = true;
-			                if( pthread_create(&msg1[num_message], NULL, send_client, (void *) desc[i]) == 0) {
+			        if( pthread_create(&msg1[num_message], NULL, send_client, (void *) desc[i]) == 0) {
 						cerr << "ATTIVA THREAD INVIO MESSAGGI" << endl;
 					}
 					num_message++;
@@ -81,13 +82,13 @@ int main(int argc, char **argv)
 		return 0;
 	}
 	if(argc == 3)
-		time_send = atoi(argv[2]);
+		time_send = atoi(argv[2]);	// char* 转为整数
 	std::signal(SIGINT, close_app);
 
 	pthread_t msg;
         vector<int> opts = { SO_REUSEPORT, SO_REUSEADDR };
 
-	if( tcp.setup(atoi(argv[1]),opts) == 0) {
+	if( tcp.setup(atoi(argv[1]),opts) == 0) {	// 绑定端口，可以接受请求
 		if( pthread_create(&msg, NULL, received, (void *)0) == 0)
 		{
 			while(1) {
