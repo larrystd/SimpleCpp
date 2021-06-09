@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/larry/programs/c++/mpi/Result/readbluepthreads/barrier.c
+barrier.h
+/home/larry/programs/c++/mpi/Result/readbluepthreads/barrier.h
+
+/home/larry/programs/c++/mpi/Result/readbluepthreads/barrier.h
+pthread.h
+-
+
+/home/larry/programs/c++/mpi/Result/readbluepthreads/block.h
+barrier.h
+/home/larry/programs/c++/mpi/Result/readbluepthreads/barrier.h
+
+/home/larry/programs/c++/mpi/Result/readbluepthreads/main.c
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+time.h
+-
+stdarg.h
+-
+block.h
+/home/larry/programs/c++/mpi/Result/readbluepthreads/block.h
+

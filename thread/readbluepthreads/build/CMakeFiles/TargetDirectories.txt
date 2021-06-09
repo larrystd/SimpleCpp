@@ -1,0 +1,3 @@
+/home/larry/programs/c++/thread/readbluepthreads/build/CMakeFiles/rebuild_cache.dir
+/home/larry/programs/c++/thread/readbluepthreads/build/CMakeFiles/main.dir
+/home/larry/programs/c++/thread/readbluepthreads/build/CMakeFiles/edit_cache.dir
