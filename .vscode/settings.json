@@ -4,6 +4,9 @@
         "iostream": "cpp",
         "new": "cpp",
         "ostream": "cpp",
-        "typeinfo": "cpp"
-    }
+        "typeinfo": "cpp",
+        "unordered_map": "cpp",
+        "random": "cpp"
+    },
+    "python.pythonPath": "/home/larry/anaconda3/bin/python"
 }
