@@ -6,7 +6,14 @@
         "ostream": "cpp",
         "typeinfo": "cpp",
         "unordered_map": "cpp",
-        "random": "cpp"
+        "random": "cpp",
+        "functional": "cpp",
+        "string": "cpp",
+        "*.tcc": "cpp",
+        "deque": "cpp",
+        "list": "cpp",
+        "vector": "cpp",
+        "string_view": "cpp"
     },
     "python.pythonPath": "/home/larry/anaconda3/bin/python"
 }
