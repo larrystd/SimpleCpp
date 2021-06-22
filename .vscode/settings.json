@@ -13,7 +13,9 @@
         "deque": "cpp",
         "list": "cpp",
         "vector": "cpp",
-        "string_view": "cpp"
+        "string_view": "cpp",
+        "array": "cpp",
+        "thread": "cpp"
     },
     "python.pythonPath": "/home/larry/anaconda3/bin/python"
 }
