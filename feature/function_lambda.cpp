@@ -5,9 +5,16 @@ std::function 和lambda表达式
 还可以结合std::bind一起使用
 
 lambda表达式
-(params) opt -> ret { func_body; };
+[capture list] (params list) mutable exception-> return type { function body }
 
 auto func2 = [](int a) -> int { return a + 2; }; 
+
+capture list：捕获外部变量列表
+params list：形参列表
+mutable指示符：用来说用是否可以修改捕获的变量
+exception：异常设定
+return type：返回类型
+function body：函数体
 */
 
 

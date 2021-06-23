@@ -5,7 +5,8 @@ std::future可以认为是传输通道，使用get()可以获得线程函数的�
 std::promise包装一个值，并与std::future绑定。
 std::packaged_task包装一个调用对象，与future绑定。
 
-future用来获取数据
+std::promise, std::packaged_task用来设置输入对象
+future用来获取执行结果
 */
 
 #include <functional>
