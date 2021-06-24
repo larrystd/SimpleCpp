@@ -27,14 +27,28 @@ using namespace std;
 
 class Solution {
 public:
+
     string decodeString(string s) {
-        stack<int> sta_digit;
-        stack<int> sta_alp;
+        stack<string> sta_;
         string res;
         bool flag;
 
-        for (int i = 0; i < s.size(); i++) {
-            if (s[i] >= '0' && s[i] <=)
+        for (int i = 0; i < s.size(); ) {
+            if (isdigit(s[i])){
+                string nums = "";
+                int j = i;
+                while (j < s.size() && isdigit(s[j])){
+                    nums.push_back(s[j]);
+                    j++;
+                }
+                sta_.push(s.substr(i,j-i));
+                i = j;
+
+            } // 数字入栈
+            else {
+                sta_.push(string(s[i]));
+                i++;
+            }
         }
     }
 };

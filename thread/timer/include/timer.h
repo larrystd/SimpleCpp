@@ -32,7 +32,6 @@ class TimerQueue {
         std::chrono::time_point<std::chrono::high_resolution_clock> time_point_;
         std::function<void()> func_;
         int repeated_id;
-        // 出队规则重载为小根堆，时间点
         bool operator<(const InternalS& b) const { return time_point_ > b.time_point_; }
     };
 
@@ -118,9 +117,9 @@ class TimerQueue {
                 cond_.wait_for(lock, diff); // 等待之
                 continue;
             } else {
-                queue_.pop();   // 出队列
+                queue_.pop();
                 lock.unlock();
-                thread_pool_.Run(std::move(s.func_));   // 在线程池中执行任务
+                thread_pool_.Run(std::move(s.func_));
             }
         }
     }

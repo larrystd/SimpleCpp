@@ -8,9 +8,9 @@
 
 // reference https://github.com/loveyacper/ananas
 
-namespace wzq {
+namespace kvr {
 
-class ExecuteOnScopeExit : wzq::NonCopyAble {
+class ExecuteOnScopeExit : NonCopyAble {
    public:
     ExecuteOnScopeExit() = default;
 
@@ -32,10 +32,10 @@ class ExecuteOnScopeExit : wzq::NonCopyAble {
     std::function<void()> func_;
 };
 
-}  // namespace wzq
+}  // namespace kvr
 
 #define _CONCAT(a, b) a##b
-#define _MAKE_DEFER_(line) wzq::ExecuteOnScopeExit _CONCAT(defer, line) = [&]()
+#define _MAKE_DEFER_(line) kvr::ExecuteOnScopeExit _CONCAT(defer, line) = [&]()
 
 #undef WZQ_DEFER
 #define WZQ_DEFER _MAKE_DEFER_(__LINE__)

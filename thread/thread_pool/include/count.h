@@ -1,5 +1,5 @@
-#ifndef __COUNT_DOWN_LATCH__
-#define __COUNT_DOWN_LATCH__
+#ifndef COUNT_DOWN_LATCH_
+#define COUNT_DOWN_LATCH_
 
 #include "noncopyable.h"
 
@@ -7,7 +7,7 @@
 #include <iostream>
 #include <mutex>
 
-namespace wzq {
+namespace kvr {
 class CountDownLatch : NonCopyAble {
    public:
     explicit CountDownLatch(uint32_t count);
@@ -23,6 +23,6 @@ class CountDownLatch : NonCopyAble {
     mutable std::mutex mutex_;
     uint32_t count_ = 0;
 };
-}  // namespace wzq
+}  // namespace kvr
 
 #endif

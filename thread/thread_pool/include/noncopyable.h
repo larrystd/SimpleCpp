@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-namespace wzq {
+namespace kvr {
 
 class NonCopyAble {
    public:
@@ -15,6 +15,6 @@ class NonCopyAble {
     ~NonCopyAble() = default;
 };
 
-}  // namespace 
+}  // namespace kvr
 
 #endif

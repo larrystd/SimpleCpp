@@ -4,7 +4,7 @@
 #include <map>
 #include <mutex>
 
-namespace wzq {
+namespace kvr {
 // thread safe map
 template <typename K, typename V>
 class ThreadSafeMap {

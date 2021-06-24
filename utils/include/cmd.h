@@ -6,7 +6,7 @@
 #include <string.h>
 #include <string>
 
-namespace wzq {
+namespace kvr {
 class Command {
    public:
     static std::string RunCmd(const std::string &cmd, int32_t result_max_size = 10240) {
@@ -37,6 +37,6 @@ class Command {
         return ret;
     }
 };
-}  // namespace wzq
+}  // namespace kvr
 
 #endif

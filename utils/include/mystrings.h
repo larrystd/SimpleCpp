@@ -8,9 +8,9 @@
 #include <string>
 #include <vector>
 
-namespace wzq {
+namespace kvr {
 
-class OwnedStrings : wzq::NonCopyAble {
+class OwnedStrings : NonCopyAble {
    public:
     OwnedStrings(const std::vector<std::string> &src) {
         char_ptr_vec.reserve(src.size() + 1);
@@ -37,6 +37,6 @@ class OwnedStrings : wzq::NonCopyAble {
     std::vector<char *> char_ptr_vec;
 };
 
-}  // namespace wzq
+}  // namespace kvr
 
 #endif
