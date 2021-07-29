@@ -1,75 +1,77 @@
 #include <thread>
 #include <mutex>
+#include <queue>
 #include <deque>
-#include <vector>
 #include <condition_variable>
 
-class CThreadDemo
-{
+class ConsumerDemo {
 private:
-	std::deque<int> m_data;
-	std::mutex m_mtx; // 全局互斥锁.
-	std::condition_variable m_cv; // 全局条件变量.
-	int       m_nGen;
- 
+	std::deque<int> shared_data;
+	std::mutex mtx_;	// 锁
+	std::condition_variable cv_;	// 条件变量
+	int		num_;
+
 private:
-// 注意生产者消费者是同一把锁
-	void ProductThread(){
-		while (true){
-			std::unique_lock <std::mutex> lck(m_mtx);   
-			m_nGen = ++m_nGen % 1000;
-			printf("product %d\n", m_nGen);
-			m_data.push_back(m_nGen);
-			lck.unlock();   // 释放锁
-			m_cv.notify_all();  // 唤醒
- 
+	void productThread() {
+		while (true) {
+			std::unique_lock<std::mutex> lck(mtx_);
+			num_ = ++num_ % 100;
+			printf("product %d\n", num_);
+			shared_data.push_back(num_);
+			lck.unlock();	// 释放锁
+
+
 			/* 等待1S */
 			std::chrono::milliseconds dura(1000);
 			std::this_thread::sleep_for(dura);
 		}
 	}
- 
-	void ConsumeThread(){
-		while (true){
-			std::unique_lock <std::mutex> lck(m_mtx);
-			while (m_data.empty()){
-				m_cv.wait(lck); // 释放锁并阻塞，等待信号量
+
+	void consumeThread() {
+		while (true) {
+			std::unique_lock<std::mutex> lck(mtx_);
+			while (shared_data.empty()) {
+				cv_.wait(lck);	// wait unique_lock 而不是mutex
 			}
-			int nData = m_data.front();
-			m_data.pop_front();
-			printf("consume %d\n", nData);
+			int n_data = shared_data.front();
+			shared_data.pop_front();
+			printf("consume %d\n", n_data);
 			lck.unlock();
-			
+
+
 			/* 等待2S */
 			std::chrono::milliseconds dura(2000);
 			std::this_thread::sleep_for(dura);
 		}
 	}
+
 public:
-	CThreadDemo(){
-		m_data.clear();
-		m_nGen = 0;
+	ConsumerDemo() {
+		shared_data.clear();
+		num_ = 0;
 	}
- 
-	void Start(){
+
+	void start() {
 		std::vector<std::thread> threads;
-		threads.clear();
-		for (int i = 0; i < 5; i++){/* 生产者线程 */
-			threads.push_back(std::thread(&CThreadDemo::ProductThread, this));
+		for (int i = 0; i < 3; i++){
+			// 传参数为this
+			// 一旦调用std::thread()构造实例，线程将立即执行
+			threads.push_back(std::thread(&ConsumerDemo::productThread, this));
 		}
-		for (int i = 5; i < 10; i++){/* 消费者线程 */
-			threads.push_back(std::thread(&CThreadDemo::ConsumeThread, this));
+		for (int i = 3; i < 6; i++){
+			threads.push_back(std::thread(&ConsumerDemo::consumeThread, this));
 		}
-		for (auto& t : threads){/* 等待所有线程的退出 */
+		for (auto& t : threads){
+			// 阻塞等待线程执行完毕
 			t.join();
 		}
 	}
 };
- 
- 
-int main()
-{
-	CThreadDemo test;
-	test.Start();
+
+int main() {
+	ConsumerDemo demo;
+	demo.start();
+
+
 	return 0;
 }
