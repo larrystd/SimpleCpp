@@ -17,7 +17,7 @@ public:
             right = NULL;
         }
     };
-
+    /// public提供掉private函数的接口
     node* root = NULL;
     int n;
     void insert(T x){
@@ -76,6 +76,8 @@ private:
     }
 
     node * insertUtil(node * head, T x){
+
+        /// 头节点
         if(head==NULL){
             n+=1;
             node * temp = new node(x);

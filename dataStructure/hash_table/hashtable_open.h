@@ -3,7 +3,8 @@
 #pragma once
 指定在创建过程中该编译指示所在的文件仅仅被编译程序包含（打开）一次。
 */
-#pragma once
+#ifndef HASH_TABLE__
+#define HASH_TABLE__
 
 #include <iostream>
 #include <vector>
@@ -47,6 +48,8 @@ struct HashTableNode {
 };
 
 const int _PrimeSize = 28;
+
+// 素数
 const unsigned long _PrimeList[_PrimeSize] =
 {
 	53ul, 97ul, 193ul, 389ul, 769ul,
@@ -190,6 +193,7 @@ private:
     // 设置实际容量是素数
     size_t _GetCapacity(const size_t& capacity) {
         for (size_t i = 0; i < _PrimeSize; i++) {
+			/// 索引容量
             if (capacity < _PrimeList[i]) 
                 return _PrimeList[i];
         }
@@ -200,8 +204,7 @@ private:
     size_t _size;
 };
 
-
-
+#endif
 /*
 #pragma once
 #include<iostream>

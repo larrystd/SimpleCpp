@@ -123,6 +123,19 @@ void SkipList::skipListInsert(int key, int value) {
 }
 ```
 
+#### 随机层数
+
+```cpp
+int SkipList::randomLevel() {
+    int k = 1;
+	while (rand() % 2)
+		k++;
+	k = (k > maxLevel) ? maxLevel : k;
+
+	return k;
+}
+```
+
 
 #### 查找
 
