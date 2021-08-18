@@ -4,5 +4,61 @@
 例如输入: k = 3, n = 9
 输出: [[1,2,6], [1,3,5], [2,3,4]]
 
-组合枚举问题。组合枚举有两种处理方法——递归法和字典序法
 */
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <numeric>
+
+using namespace std;
+
+class Solution {
+public:
+    vector<vector<int>> res;
+
+    vector<vector<int>> combinationSum3(int k, int n) {
+        vector<int>track;
+        int maxnum = 9;
+        vector<int> nums(maxnum, 0);
+        for (int i = 0; i < maxnum; i++) {
+            nums[i] = i+1;
+        }
+
+        backtrack(nums, track, n, k, 0);
+
+        return res;
+
+
+    }
+
+    void backtrack(vector<int>& nums, vector<int>& track, int n, int k, int index) {
+        if (k == 0 && accumulate(track.begin(), track.end(), 0) == n) {
+            res.push_back(track);
+            return;
+        }
+        if (accumulate(track.begin(), track.end(), 0) > n) 
+            return;
+        
+        for (int i = index; i < nums.size(); i++) {
+            if (!count(track.begin(), track.end(), nums[i])){
+                track.push_back(nums[i]);
+                backtrack(nums, track, n, k-1, i+1);
+                track.pop_back();
+            }
+        }
+    }
+};
+
+int main() {
+    Solution s;
+
+    vector<vector<int>> res = s.combinationSum3(3,9);
+
+    for (int i = 0; i < res.size(); i++) {
+        for (int j =  0; j < res[i].size(); j++) {
+            cout << res[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
