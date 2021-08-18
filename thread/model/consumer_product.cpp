@@ -11,7 +11,7 @@ private:
 	std::condition_variable cv_;	// 条件变量
 	int		num_;
 
-private:
+public:
 	void productThread() {
 		while (true) {
 			std::unique_lock<std::mutex> lck(mtx_);
@@ -66,11 +66,24 @@ public:
 			t.join();
 		}
 	}
+
+	void start2() {
+
+		/// 如果创建线程函数在类外会出错
+		std::thread t1(&ConsumerDemo::consumeThread,this);
+		std::thread t2(&ConsumerDemo::productThread, this);
+
+		t1.join();
+		t2.join();
+	}
 };
 
 int main() {
 	ConsumerDemo demo;
-	demo.start();
+	ConsumerDemo consumerdemo;
+
+	demo.start2();
+	// demo.start();
 
 
 	return 0;
