@@ -72,9 +72,11 @@ public:
 		/// 如果创建线程函数在类外会出错
 		std::thread t1(&ConsumerDemo::consumeThread,this);
 		std::thread t2(&ConsumerDemo::productThread, this);
+		std::thread t3(&ConsumerDemo::consumeThread,this);
 
 		t1.join();
 		t2.join();
+		t3.join();
 	}
 };
 

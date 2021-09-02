@@ -13,6 +13,7 @@ https://redrain.blog.csdn.net/article/details/111327141
 class Singleton {
 public:
 // 一个class只能通过GetInstance创建一个对象
+// 读线程安全, 写才可能导致race, 如下new Singleton()是写, 可能导致竞态。
     static Singleton* GetInstance() {
         if (!instance_){    // 不存在对象才创建
             std::lock_guard<std::mutex> lock(lock_);    // 通过加锁保证多线程安全
