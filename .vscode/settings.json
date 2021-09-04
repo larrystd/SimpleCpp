@@ -57,7 +57,8 @@
         "sstream": "cpp",
         "stdexcept": "cpp",
         "streambuf": "cpp",
-        "cinttypes": "cpp"
+        "cinttypes": "cpp",
+        "stack": "cpp"
     },
     "python.pythonPath": "/home/larry/anaconda3/bin/python",
     "C_Cpp.errorSquiggles": "Disabled"

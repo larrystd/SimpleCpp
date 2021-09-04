@@ -5,60 +5,57 @@ using namespace std;
 
 class Solution {
 public:
+    int nextstep(int index, int n, vector<int>& nums) {
+        return ((index + nums[index])%n + n) % n;
+    }
+
     bool circularArrayLoop(vector<int>& nums) {
-        int n = nums.size();
-        vector<int> mark(n, 0);
-        for (int i = 0; i < nums.size(); i++) {
-            mark = vector<int>(n,0);
-            if (mark[i] == 0) {
-                mark[i] = 1;
-                int step = nums[i];
-                int pos;
-                if (i + nums[i] < 0) 
-                    pos = i + nums[i]%n + n;
-                else
-                    pos = (i + nums[i]) % n;
-                while (1) {
-                    //if (step > n || step < -n)
-                    //    break;
-                    if (mark[pos] == 1) {
-                        bool istrue = true;
-                        bool flag = nums[pos]>0;
-                        int pos_;
-                        if (pos + nums[pos] < 0)
-                            pos_ = pos + nums[pos]%n + n;
-                        else
-                            pos_ = (pos + nums[pos]) % n;
-                        if (pos_ == pos)
-                            break;
-                        
-                        while (pos_ != pos) {
-                            if (nums[pos_] >0 != flag){
-                                istrue = false;
-                                break;
-                            }     
-                            if (pos_ + nums[pos_] < 0)
-                                pos_ = pos_ + nums[pos_]%n + n;
-                            else
-                                pos_ = (pos_ + nums[pos_]) % n;
-                        }
-                        if (istrue)
-                            return true;
-                        else
-                            break;
-                    }
-                        
-                    step += nums[pos];
-                    mark[pos] = 1;
-                    if (pos + nums[pos] < 0) 
-                        pos = pos + nums[pos]%n + n;
-                    else
-                        pos = (pos + nums[pos]) % n;
-                    
+        int len = nums.size();
+        for (int i = 0; i < len; i++) {
+            int slow = i;
+            int fast = nextstep(slow, len, nums);
+
+            
+            // 方向一致且不为0
+            while (nums[fast] * nums[i] > 0 && nums[nextstep(fast, len, nums)] * nums[i] > 0) {
+                if (slow == fast) {
+                    if (slow == nextstep(slow, len, nums))
+                        break;
+                    return true;
                 }
-            }  
+                slow = nextstep(slow, len, nums);
+                // 快指针走两次, 慢指针走一次
+                fast = nextstep(nextstep(fast, len, nums), len, nums);
+            }
         }
         return false;
+    }
+
+
+    // 朴素模拟
+    int n;
+    vector<int> nums;
+    bool circularArrayLoop_2(vector<int>& _nums) {
+        nums = _nums;
+        n = nums.size();
+        for (int i = 0; i < n; i++) {
+            if (check(i)) return true;
+        }
+        return false;
+    }
+    bool check(int start) {
+        int cur = start;
+        bool flag = nums[start] > 0;
+        int k = 1;
+        while (true) {
+            if (k > n) return false;
+            int next = ((cur + nums[cur]) % n + n ) % n;
+            if (flag && nums[next] < 0) return false;
+            if (!flag && nums[next] > 0) return false;
+            if (next == start) return k > 1;
+            cur = next;
+            k++;
+        }
     }
 };
 
@@ -66,6 +63,6 @@ int main() {
     vector<int> vect = {-2,-3,-9};
     Solution s;
     //cout << (-10 % 3) <<endl;
-    cout << s.circularArrayLoop(vect)<<endl;
+    cout << s.circularArrayLoop_2(vect)<<endl;
     return 0;
 }
