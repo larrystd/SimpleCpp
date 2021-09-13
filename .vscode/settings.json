@@ -58,7 +58,16 @@
         "stdexcept": "cpp",
         "streambuf": "cpp",
         "cinttypes": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "cassert": "cpp",
+        "cerrno": "cpp",
+        "climits": "cpp",
+        "set": "cpp",
+        "ios": "cpp",
+        "locale": "cpp",
+        "queue": "cpp",
+        "cstdbool": "cpp",
+        "bitset": "c"
     },
     "python.pythonPath": "/home/larry/anaconda3/bin/python",
     "C_Cpp.errorSquiggles": "Disabled"
