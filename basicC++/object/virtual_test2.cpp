@@ -28,8 +28,10 @@ int main()
 {
     Base base;
     Base base2;
+    Base* base3 = new Derive;
+
     cout << "&base: " << &base << endl;
-    cout << "&base2: " << &base2 << endl;
+    cout << "&base2 对象地址: " << &base2 << endl;
     cout << "&base.base_data: " << &base.base_data << endl;
     cout << "----------------------------------------" << endl;
  
@@ -58,8 +60,29 @@ int main()
  
     for(int i=0; i<3; i++)
     {
+        unsigned long* vtbl = (unsigned long*)(*(unsigned long*)&base2) + i;
+        cout << "虚函数表slot address: " << vtbl << endl;
+        cout << "func address: " << *vtbl << endl;
+        func pfunc = (func)*(vtbl);
+        pfunc();
+    }
+    cout << "----------------------------------------" << endl;
+
+    for(int i=0; i<3; i++)
+    {
         unsigned long* vtbl = (unsigned long*)(*(unsigned long*)&derive) + i;
-        cout << "slot address: " << vtbl << endl;
+        cout << "derive 虚函数表slot address: " << vtbl << endl;
+        cout << "func address: " << *vtbl << endl;
+        func pfunc = (func)*(vtbl);
+        pfunc();
+    }
+    cout << "----------------------------------------" << endl;
+
+
+    for(int i=0; i<3; i++)
+    {
+        unsigned long* vtbl = (unsigned long*)(*(unsigned long*)&(*base3)) + i;
+        cout << "虚函数表slot address: " << vtbl << endl;
         cout << "func address: " << *vtbl << endl;
         func pfunc = (func)*(vtbl);
         pfunc();
