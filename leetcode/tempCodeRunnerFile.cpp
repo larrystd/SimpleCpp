@@ -1,1 +1,1 @@
-cnt
+cout
