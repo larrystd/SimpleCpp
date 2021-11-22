@@ -46,6 +46,7 @@ private:
     // 右旋也就所顺时针旋转，左旋逆时针
     // 右旋，本来头节点为head(记A)，变成了head的左子树节点(记B)
     // 同时B的右子树变成了A的左子树，A变成了B的右子树
+    // head是旋转轴的根节点
     node * rightRotation(node* head){
         node* newhead = head->left;
         head->left = newhead->right;
@@ -89,7 +90,7 @@ private:
         // 再更新树高
         head->height = 1 + max(height(head->left), height(head->right));
 
-        // 判断是否左旋右旋
+        // 更新树高后判断是否左旋右旋
         int bal = height(head->left) - height(head->right);
         if(bal>1){  // 左侧高
             if(x < head->left->key){    // 说明元素插入到了左侧，左旋即可
@@ -100,10 +101,11 @@ private:
             }
 
         }else if(bal<-1){
-            if(x > head->right->key){
+            // 右侧高
+            if(x > head->right->key){   // 右侧高插入右子树, 只需要左旋
                 return leftRotation(head);
-            }else{
-                head->right = rightRotation(head->right);
+            }else{  // 右侧高插入左子树, 需要先左旋,再右旋
+                head->right = rightRotation(head->right);   
                 return leftRotation(head);
             }
         }
@@ -166,16 +168,11 @@ private:
 
 int main(){
     AVL<float> t;
-    t.insert(1.3);
-    t.insert(2.4);
-    t.insert(3.5);
-    t.insert(4.6);
-    t.insert(5.7);
-    t.insert(6.8);
-    t.insert(7.9);
-    t.inorder();
-    t.remove(5.7);
-    t.remove(6.8);
-    t.remove(7.9);
+    t.insert(10);
+    t.insert(5);
+    t.insert(7);
+    t.insert(15);
+    t.insert(12);
+    t.insert(14);
     t.inorder();
 }

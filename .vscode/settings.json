@@ -88,7 +88,11 @@
         "__memory": "cpp",
         "variant": "cpp",
         "error.h": "c",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "sched.h": "c",
+        "*.ipp": "cpp",
+        "cfloat": "cpp",
+        "ciso646": "cpp"
     },
     "python.pythonPath": "/home/larry/anaconda3/bin/python",
     "C_Cpp.errorSquiggles": "Disabled"

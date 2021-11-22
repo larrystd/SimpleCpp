@@ -1,0 +1,4 @@
+/home/larry/programs/c++code/database/build/CMakeFiles/rebuild_cache.dir
+/home/larry/programs/c++code/database/build/CMakeFiles/edit_cache.dir
+/home/larry/programs/c++code/database/build/CMakeFiles/mysqllib.dir
+/home/larry/programs/c++code/database/build/CMakeFiles/mysqlcpp.dir

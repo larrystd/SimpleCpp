@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/larry/programs/c++code/database/mysql_connection_sp.cc
+cstdio
+-
+cstdlib
+-
+cassert
+-
+mysql_connection_sp.h
+/home/larry/programs/c++code/database/mysql_connection_sp.h
+
+/home/larry/programs/c++code/database/mysql_connection_sp.h
+iostream
+-
+string
+-
+list
+-
+memory
+-
+functional
+-
+mysql_driver.h
+-
+mysql_connection.h
+-
+cppconn/driver.h
+-
+cppconn/statement.h
+-
+cppconn/prepared_statement.h
+-
+cppconn/resultset.h
+-
+exception
+-
+mutex
+-
+
