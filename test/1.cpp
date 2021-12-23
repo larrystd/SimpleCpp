@@ -34,7 +34,6 @@ void backtrace(vector<int>&problem, vector<vector<char>>& people, int& ans, int 
 int main() {
     int n ;
     cin >> n;
-
     while(n --){
         int r , c;
         cin >> r >> c;

@@ -13,6 +13,10 @@ int main()
       
     printf("%d\n", NAME(a));  
     printf("%d\n", NAME(b));  
+
+    int a[3];
+    a[1] = 1;
+    a[3]=4;
    
     return 0;  
 }

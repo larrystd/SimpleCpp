@@ -1,0 +1,22 @@
+// test.proto
+syntax = "proto3";
+
+enum Messagetype
+{
+	REQUEST_RESPONSE_NONE = 0;            
+	REQUEST_HEARTBEAT_SIGNAL = 1;          
+	RESPONSE_HEARTBEAT_RESULT = 2;      
+}
+
+message MsgResult
+{
+	bool result =1;  
+	bytes error_code = 2; 
+}
+
+message TopMessage
+{
+	Messagetype message_type = 1; 		//message type, 枚举类型
+	MsgResult msg_result = 2;
+
+}

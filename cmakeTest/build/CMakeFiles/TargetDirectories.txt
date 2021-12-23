@@ -1,0 +1,14 @@
+/home/larry/programs/c++code/cmakeTest/build/CMakeFiles/install/strip.dir
+/home/larry/programs/c++code/cmakeTest/build/CMakeFiles/edit_cache.dir
+/home/larry/programs/c++code/cmakeTest/build/CMakeFiles/helloworld.dir
+/home/larry/programs/c++code/cmakeTest/build/CMakeFiles/rebuild_cache.dir
+/home/larry/programs/c++code/cmakeTest/build/CMakeFiles/list_install_components.dir
+/home/larry/programs/c++code/cmakeTest/build/CMakeFiles/install/local.dir
+/home/larry/programs/c++code/cmakeTest/build/CMakeFiles/install.dir
+/home/larry/programs/c++code/cmakeTest/build/hello/CMakeFiles/install/strip.dir
+/home/larry/programs/c++code/cmakeTest/build/hello/CMakeFiles/edit_cache.dir
+/home/larry/programs/c++code/cmakeTest/build/hello/CMakeFiles/HE.dir
+/home/larry/programs/c++code/cmakeTest/build/hello/CMakeFiles/install.dir
+/home/larry/programs/c++code/cmakeTest/build/hello/CMakeFiles/rebuild_cache.dir
+/home/larry/programs/c++code/cmakeTest/build/hello/CMakeFiles/list_install_components.dir
+/home/larry/programs/c++code/cmakeTest/build/hello/CMakeFiles/install/local.dir

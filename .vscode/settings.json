@@ -92,7 +92,11 @@
         "sched.h": "c",
         "*.ipp": "cpp",
         "cfloat": "cpp",
-        "ciso646": "cpp"
+        "ciso646": "cpp",
+        "__functional_base_03": "cpp",
+        "*.inc": "cpp",
+        "regex": "cpp",
+        "valarray": "cpp"
     },
     "python.pythonPath": "/home/larry/anaconda3/bin/python",
     "C_Cpp.errorSquiggles": "Disabled"

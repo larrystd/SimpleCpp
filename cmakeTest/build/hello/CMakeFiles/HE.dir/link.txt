@@ -1,0 +1,2 @@
+/usr/bin/ar qc libHE.a  CMakeFiles/HE.dir/hello.cc.o
+/usr/bin/ranlib libHE.a

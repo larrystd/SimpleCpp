@@ -1,0 +1,3 @@
+/home/larry/programs/c++code/cmakeTest/build/bin/helloworld
+/home/larry/programs/c++code/cmakeTest/build/lib/libhello.a
+/home/larry/programs/c++code/cmakeTest/build/include/hello.h
