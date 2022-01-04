@@ -1,0 +1,2 @@
+ANSWER_COUNT = 0
+MAXNUM = 8

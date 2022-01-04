@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>SNAP: Network datasets: Gowalla</title>
+
+<!-- Standard reset, fonts and grids -->
+<link rel="stylesheet" type="text/css" href="../styles/reset-fonts-grids.css">
+<!-- CSS for Menu -->
+<link rel="stylesheet" type="text/css" href="../styles/sam/menu.css">
+<!-- Dependency source files -->
+  <script type="text/javascript" src="../styles/yahoo-dom-event.js"></script>
+  <script type="text/javascript" src="../styles/container_core.js"></script>
+  <!-- Menu source file -->
+  <script type="text/javascript" src="../styles/menu.js"></script>
+  <!-- styles for the whole website -->
+  <link href="../styles/styles.css" rel="stylesheet" type="text/css" />
+  <!-- javascript for the menu -->
+  <script type="text/javascript">
+    YAHOO.util.Event.onContentReady("graphgardenmainmenu", function () {
+    var oMenu = new YAHOO.widget.Menu("graphgardenmainmenu", { position: "static", hidedelay:  0, lazyload: true }); oMenu.render(); });
+  </script>
+</head>
+
+
+<body class="yui-skin-sam" id="yahoo-com">
+
+<div id="doc" class="yui-t1">
+
+<div id="hd">
+<!-- START: header -->
+<div id="header"><a href="http://cs.stanford.edu/~jure/"><img id="by-jure" src="../images/by_jure.gif" alt="By Jure Leskovec" /></a><img id="mld-logo" src="../images/empty_logo.png" alt="" /><a href="http://www.stanford.edu/"><img id="cmu-logo" src="../images/stanford.png" alt="Stanford University" /></a></div>
+<!-- END: header -->
+</div>
+
+<!-- START: left column -->
+<div id="left-column">
+<!--BEGIN left_column.html -->
+  <a href="../index.html"><img id="snap-logo" src="../images/snap_logo.png" alt="SNAP logo" /></a>
+
+  <div id="graphgardenmainmenu" class="yuimenu">
+    <div class="bd">
+      <ul class="first-of-type">
+      <li class="yuimenuitem first-of-type"><a class="yuimenuitemlabel" href="../snap/index.html">SNAP for C++</a>
+        <div id="snapcpp" class="yuimenu">
+          <div class="bd">
+            <ul>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="../snap/index.html">SNAP C++ Main Page</a></li>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="../snap/download.html">SNAP C++ Download</a></li>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="../snap/doc.html">SNAP C++ Documentation</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li class="yuimenuitem first-of-type"><a class="yuimenuitemlabel" href="../snappy/index.html">SNAP for Python</a>
+        <div id="snappy" class="yuimenu">
+          <div class="bd">
+            <ul>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="../snappy/index.html">Snap.py Python Main Page</a></li>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="../snappy/index.html#download">Snap.py Python Download</a></li>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="../snappy/index.html#docs">Snap.py Python Documentation</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li class="yuimenuitem first-of-type"><a class="yuimenuitemlabel" href="../data/index.html">SNAP Datasets</a>
+        <div id="datasets" class="yuimenu">
+          <div class="bd">
+            <ul>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="../data/index.html">Large networks</a></li>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="../data/other.html">Web datasets</a></li>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="../data/links.html">Other resources</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li class="yuimenuitem first-of-type"><a class="yuimenuitemlabel" href="../biodata/index.html">BIOSNAP Datasets</a></li>
+      <li class="yuimenuitem"><a class="yuimenuitemlabel"  href="../news.html">What's new</a></li>
+	    <li class="yuimenuitem"><a class="yuimenuitemlabel"  href="../people.html">People</a></li>
+      <li class="yuimenuitem"><a class="yuimenuitemlabel"  href="../papers.html">Papers</a></li>
+      <li class="yuimenuitem"><a class="yuimenuitemlabel"  href="../projects.html">Projects</a>
+        <div id="projects" class="yuimenu">
+          <div class="bd">
+            <ul>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="http://snap.stanford.edu/activity-inequality">Activity Inequality</a></li>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="http://snap.stanford.edu/agm">AGM</a></li>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="http://snap.stanford.edu/comet">COMET</a></li>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="http://snap.stanford.edu/conflict">Conflict</a></li>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="http://snap.stanford.edu/connie">ConNIe</a></li>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="http://snap.stanford.edu/counseling">Counseling</a></li>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="http://snap.stanford.edu/crank">CRank</a></li>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="http://snap.stanford.edu/decagon">Decagon</a></li>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="http://snap.stanford.edu/graphsage">GraphSAGE</a></li>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="http://snap.stanford.edu/graphwave">GraphWave</a></li>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="http://snap.stanford.edu/higher-order">Higher-order</a></li>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="http://snap.stanford.edu/hoax">Disinformation</a></li>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="http://snap.stanford.edu/infopath">InfoPath</a></li>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="http://snap.stanford.edu/lim">LIM</a></li>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="http://snap.stanford.edu/mappr">MAPPR</a></li>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="http://snap.stanford.edu/mambo">MAMBO</a></li>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="http://snap.stanford.edu/mars">MARS</a></li>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="http://snap.stanford.edu/memetracker">Memetracker</a></li>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="http://snap.stanford.edu/ncp">NCP</a></li>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="http://snap.stanford.edu/ne">NE</a></li>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="http://snap.stanford.edu/netinf">NETINF</a></li>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="http://snap.stanford.edu/nifty/">NIFTY</a></li>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="http://snap.stanford.edu/node2vec">node2vec</a></li>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="http://snap.stanford.edu/ohmnet">OhmNet</a></li>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="http://snap.stanford.edu/orca">ORCA</a></li>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="http://snap.stanford.edu/pathways">Pathways</a></li>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="http://snap.stanford.edu/quotus">QUOTUS</a></li>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="http://snap.stanford.edu/ringo">Ringo</a></li>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="http://snap.stanford.edu/seismic">SEISMIC</a></li>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="http://snap.stanford.edu/snap">SNAP</a></li>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="http://snap.stanford.edu/snappy">Snap.py</a></li>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="http://snap.stanford.edu/snapvx">SnapVX</a></li>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="http://snap.stanford.edu/temporal-motifs">Temporal Motifs</a></li>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="http://snap.stanford.edu/ticc">TICC</a></li>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="http://snap.stanford.edu/tipas">TIPAS</a></li>
+              <li class="yuimenuitem"><a class="yuimenuitemlabel" href="http://snap.stanford.edu/tvgl">TVGL</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li class="yuimenuitem"><a class="yuimenuitemlabel"  href="../citing.html">Citing SNAP</a></li>
+      <li class="yuimenuitem"><a class="yuimenuitemlabel"  href="../links.html">Links</a></li>
+      <li class="yuimenuitem"><a class="yuimenuitemlabel"  href="../about.html">About</a></li>
+      <li class="yuimenuitem"><a class="yuimenuitemlabel"  href="../contact.html">Contact us</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="graphgardenmainmenu" class="yuimenu">
+    <div style="color:#ff8b00; font-weight: bold; font-size: 1.2em; padding-top: 10px; padding-bottom: 3px;">Open positions</div>
+  </div>
+
+  <div id="graphgardenmainmenu" class="yuimenu">
+    <div class="bd" style="padding: 2px 4px 2px 4px; ">
+    Open research positions in <b>SNAP</b> group are available at
+    <b><a href="http://snap.stanford.edu/apply/index.php">undergraduate, graduate</a></b>
+    and
+    <b><a href="http://snap.stanford.edu/apply/index-postdoc.php">postdoctoral</a></b>
+    levels.
+    </div>
+  </div>
+
+<!--END left_column.html -->
+
+</div>
+<!-- END: left column -->
+
+<!-- START: right column -->
+<div id="right-column">
+
+<h1>Gowalla</h1>
+
+<h3>Dataset information</h3>
+
+<p><a href="http://www.gowalla.com">Gowalla</a> is a location-based social networking website where users share their locations by checking-in. The friendship network is undirected and was collected using their public API, and consists of 196,591 nodes and 950,327 edges. We have collected a total of 6,442,890 check-ins of these users over the period of Feb. 2009 - Oct. 2010. </p>
+
+<table id="datatab" summary="Dataset statistics">
+  <tr> <th colspan="2">Dataset statistics</th> </tr>
+  <tr><td>Nodes</td> <td>196591</td></tr>
+  <tr><td>Edges</td> <td>950327</td></tr>
+  <tr><td>Nodes in largest WCC</td> <td>196591 (1.000)</td></tr>
+  <tr><td>Edges in largest WCC</td> <td>950327 (1.000)</td></tr>
+  <tr><td>Nodes in largest SCC</td> <td>196591 (1.000)</td></tr>
+  <tr><td>Edges in largest SCC</td> <td>950327 (1.000)</td></tr>
+  <tr><td>Average clustering coefficient</td> <td>0.2367</td></tr>
+  <tr><td>Number of triangles</td> <td>2273138</td></tr>
+  <tr><td>Fraction of closed triangles</td> <td>0.007952</td></tr>
+  <tr><td>Diameter (longest shortest path)</td> <td>14</td></tr>
+  <tr><td>90-percentile effective diameter</td> <td>5.7</td></tr>
+  <tr><td>Check-ins</td> <td>6,442,890</td></tr>
+</table>
+
+<br>
+
+<h3>Source (citation)</h3>
+<ul>
+   <li> E. Cho, S. A. Myers, J. Leskovec. Friendship and Mobility: <a href="http://cs.stanford.edu/people/jure/pubs/mobile-kdd11.pdf">Friendship and Mobility: User Movement in Location-Based Social Networks</a> ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD), 2011.</li> 
+</ul>
+<br>
+
+<h3>Files</h3>
+<table id="datatab" summary="Table of datasets">
+<tr>
+  <th>File</th>
+  <th>Description</th>
+</tr>
+<tr>
+  <td><a href="loc-gowalla_edges.txt.gz">loc-gowalla_edges.txt.gz</a></td>
+  <td>Friendship network of Gowalla users</td>
+</tr>
+<tr>
+	<td><a href="loc-gowalla_totalCheckins.txt.gz">loc-gowalla_totalCheckins.txt.gz</a></td>
+	<td>Time and location information of check-ins made by users</td>
+</tr>
+</table>
+<br>
+
+<h3>Example of check-in information</h3>
+<div class="code">[user]	[check-in time]		[latitude]	[longitude]	[location id]
+196514  2010-07-24T13:45:06Z    53.3648119      -2.2723465833   145064
+196514  2010-07-24T13:44:58Z    53.360511233    -2.276369017    1275991
+196514  2010-07-24T13:44:46Z    53.3653895945   -2.2754087046   376497
+196514  2010-07-24T13:44:38Z    53.3663709833   -2.2700764333   98503
+196514  2010-07-24T13:44:26Z    53.3674087524   -2.2783813477   1043431
+196514  2010-07-24T13:44:08Z    53.3675663377   -2.278631763    881734
+196514  2010-07-24T13:43:18Z    53.3679640626   -2.2792943689   207763
+196514  2010-07-24T13:41:10Z    53.364905       -2.270824       1042822	
+</div>
+
+
+</div>
+<!-- END: right column -->
+
+<div id="footer">
+<!-- you can put something here -->
+</div>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-342639-4");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+</body>
+</html>
